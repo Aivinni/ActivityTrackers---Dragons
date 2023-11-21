@@ -2,39 +2,57 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter your goal in minutes: ");
-        int goal = scan.nextInt();
-        scan.nextLine();
-
-        // create an ActivityTracker object
-        ActivityTracker Tracker1 = new ActivityTracker(goal);
-        System.out.println("Enter the number of minutes for your activity session: ");
-        int mins = scan.nextInt();
-        scan.nextLine();
-        Tracker1.logMinutes(mins);
-        System.out.println("----Current Stats----");
-        System.out.println("Number of sessions: " + Tracker1.getSessions());
-        System.out.println("Total number of minutes logged: " + Tracker1.getTotalMinutes());
-        System.out.println("Longest session logged: " + Tracker1.getMaxMinutes());
-        System.out.println("Goal reached: " + Tracker1.goalAchieved());
-        System.out.println("---------------------");
-
-        // loop until the user has logged enough minutes to reach their goal,
-        // allowing them to enter a new activity each time and printing out
-        // the stats after each
-       while (!Tracker1.goalAchieved()) {
-            System.out.println("Enter the number of minutes for your activity session: ");
-            mins = scan.nextInt();
-            scan.nextLine();
-            Tracker1.logMinutes(mins);
-            System.out.println("----Current Stats----");
-            System.out.println("Number of sessions: " + Tracker1.getSessions());
-            System.out.println("Total number of minutes logged: " + Tracker1.getTotalMinutes());
-            System.out.println("Longest session logged: " + Tracker1.getMaxMinutes());
-            System.out.println("Goal reached: " + Tracker1.goalAchieved());
-            System.out.println("---------------------");
-       } 
-       System.out.println("Thank You for using the activity tracker!");
+        Dragon dragon = new Dragon();
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        int attackAmt = dragon.attack();
+        System.out.println(); // blank line
+        dragon.takeDamage(20);
+        System.out.println(); // blank line
+        dragon.powerUp(1);
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        int attackAmt2 = dragon.attack();
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        dragon.takeDamage(70);
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        int attackAmt3 = dragon.attack();
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        int attackAmt4 = dragon.attack();
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        dragon.takeDamage(65);
+        System.out.println(); // blank line
+        dragon.takeDamage(40);
+        System.out.println(); // blank line
+        dragon.takeDamage(10);
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        System.out.println(dragon.getStrength());
+        System.out.println(); // blank line
+        System.out.println(dragon.getHealth());
+        System.out.println(); // blank line
+        System.out.println(dragon.getLevel());
+        System.out.println(); // blank line
+        System.out.println(dragon.isDead());
+        System.out.println(); // blank line
     }
 }
+
